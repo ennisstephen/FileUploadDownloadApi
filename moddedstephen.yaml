@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: modded-stephen
+  namespace: stephen
+  labels:
+     name: modded-stephen
+spec:
+  containers:
+  - name: stephen
+    image: ennisstephen/fileuploadmod:0.0.5
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - mountPath: /Files-Upload
+      name: modded-stephen
+  volumes:
+    - name: modded-stephen
+      emptyDir: {}

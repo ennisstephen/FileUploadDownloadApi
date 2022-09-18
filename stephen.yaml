@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: stephen
+  namespace: stephen
+spec:
+  containers:
+  - name: stephen
+    image: ennisstephen/fileupload:latest
+    ports:
+    - containerPort: 8080
+    volumeMounts:
+    - mountPath: /Files-Upload
+      name: stephen
+  volumes:
+    - name: stephen
+      emptyDir: {}
